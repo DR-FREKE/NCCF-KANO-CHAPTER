@@ -1,0 +1,505 @@
+//Default Colors
+$bg-color: rgb(250, 250, 250);
+$pan-bg-color:rgb(240, 240, 240);
+$text-color: rgb(48, 48, 48);
+$header-color:rgb(19, 19, 19);
+$hr-color:rgb(255, 91, 27);
+
+//Default Font-family
+$p-font: consolas;
+
+
+@mixin admin-banner {
+    #nccf-logo{
+       width: 30%; 
+       height: 90px;
+    }
+    hr{
+        height: 30px;
+        width: 100%;
+        background-color: $hr-color;
+        border-style: none;
+    }
+}
+
+@mixin ctrl-btns{
+    width: 94%;
+    height: 70px;
+    margin:0px auto;
+    margin-bottom: 70px;
+
+
+    .btn-box{
+        width: 20%;
+        height: 70px;
+        float: left;
+        margin-right:5%;
+        img{
+            float: left;
+            width: 30%;
+            height: 64px;
+            margin: 0;
+            padding: 0 0 4px 4px;
+        }
+        p{text-align: center;color: rgb(129, 129, 129);padding: 0px;}
+    }
+
+}
+/*
+@mixin ctrlBtns{
+    width: 20%;
+        height: 70px;
+        float: left;
+        margin-right: 5%;
+        img{
+            float: left;
+            width: 30%;
+            height: 64px;
+            margin: 0;
+            padding: 0 0 4px 4px;
+        }
+        p{text-align: center;color: rgb(129, 129, 129);padding: 1px;}
+}*/
+
+body{
+    background: $bg-color;
+}
+
+.banner{
+    @include admin-banner;
+}
+
+// Index page
+.main-grid-container{
+    display: grid;
+    grid-template-columns: 20% 4% 76%;
+    grid-auto-rows: minmax(76vh,76vh);
+    .left-pan{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        background: $pan-bg-color;
+        p{
+            font-family: $p-font;
+            text-align: left;
+            padding: 0 10px;
+            background-color: rgb(233, 233, 233);
+        }
+        ul{
+            padding: 8px 0 0 0;
+            
+        }
+        li{
+            list-style-type: none;
+            //display: block;
+            margin: 2px 0 2px 6px; 
+        }
+        #avartar{
+            width: 160px;
+            height:160px;
+            border-radius: 60px;
+            margin: 0 auto;
+            img{
+                width: inherit;
+                height: inherit;
+                border-radius: 60px;
+                box-shadow: 0 0 14px #000;
+            }
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            padding: 6px;
+        }
+        //a.home{color: rgb(0, 22, 117);}
+        a:hover{
+            background-color: $hr-color;
+            color:#fff;
+        }
+    }
+    .rite-pan{ 
+        grid-column-start:3;
+        grid-column-end: 4;
+        overflow: auto;
+        background: $pan-bg-color;
+        h3{
+            color: $header-color;
+            padding-left: 20px;
+            text-align: left;
+            font-family: 'lucida calligraphy';
+        }
+                
+        .top-btns{
+           @include ctrl-btns;
+        }
+        .mid-btns{
+           @include ctrl-btns;
+        }
+        .bottom-btns{
+           @include ctrl-btns;
+        }
+
+        .btn-box:hover{
+            box-shadow: 0 0 6px $hr-color;
+            cursor: pointer;
+        }
+        //view-testimony.html/prayer-request.html
+        .testimony-pan{
+            width: 86%;
+            height: 120px;
+            margin: 20px auto;
+            border-radius: 20px;
+            overflow-y: auto;
+            box-shadow: 0 0 8px rgb(99, 99, 99);
+            p{
+                font-family: Georgia;
+                text-align: center;
+                padding: 4px;
+                font-size: 14px;
+                color: rgb(141, 141, 141);
+            }
+            h4,h5{
+                text-align: right;
+                margin: 0 30px 0 0;
+                font-family: cursive;
+                color: rgb(114, 114, 114);
+            }
+           
+        }
+            //*******View Testimony page*******//
+
+            //new-post.html and genco.html 
+            .dailyPost-form{
+                width: 80%;
+                height: 300px;
+                margin: 30px auto;
+                form{
+                    input{
+                       width: 300px;
+                       height: 60px; 
+                       margin: 20px 40px 10px 0;
+                       font-size: 20px;
+                       font-family: cursive;
+                       border-radius: 20px;
+                       cursor: pointer;
+                       background-color: rgb(218, 218, 218);
+                    }
+                    textarea{
+                        width: 96%;
+                        height: 300px;
+                        border: none;
+                        resize: none;
+                        border-radius: 30px;
+                        box-shadow: 0 0 6px rgb(141, 141, 141);
+                        font-size: 16px;
+                        padding: 30px;
+                    }
+                }
+            } 
+            //********New-post.html and genco.html***********//
+
+            // add-new-admin.html
+            .add-admin-pan{
+                width: 60%;
+                height: auto;
+                box-shadow: 0 0 10px #000;
+                margin: 30px auto;
+                h4{
+                    padding: 10px;
+                    text-align: center;
+                }
+                form{
+                    width: 70%;
+                    margin: 2px auto;
+                    input{
+                       width: 100%;
+                       height: 46px;
+                       margin-bottom: 10px;
+                       border-color: rgb(221, 221, 221);
+                      
+                    }
+                    input.submitBtn{
+                        width: 50%;
+                        border-radius: 12px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            //********add-new-admin.html **********//
+            //  executive-lounge.html 
+            .executive-louge-container{
+                p{
+                    padding-left: 20px;
+                    
+                }
+                nav.left{
+                    width: 46%;
+                    height: 50px;
+                    margin: 1%;
+                    box-shadow: 0 0 30px #fff;
+                    float: left;
+                    border-radius: 10px;
+                    p{
+                        font-size: 20px;
+                        margin-top: 0;
+                    }
+                }
+                
+                nav.right{
+                    width: 46%;
+                    height: 50px;
+                    margin: 1%;
+                    box-shadow: 0 0 30px #fff;
+                    float: right;
+                    border-radius: 10px;
+                    p{
+                        font-size: 20px;
+                        margin-top: 0
+                    }
+                    input{
+                        width: 100%;
+                        height: inherit;
+                        cursor: pointer;
+                        border-style: none;
+                        border-radius: 10px;
+                        font-size: 20px;
+                    }
+                    input:hover{background-color: $hr-color;}
+                }
+                
+            }
+            //********executive-louge.html**********//
+
+           //     executive-change-form.html
+                 .form-pan{
+                    width: 60%;
+                    height: auto;
+                    margin: 2%;
+                    background-color: $pan-bg-color;
+                    label{
+                        margin: 20px;
+                    }
+                    input,select{
+                        width: 80%;
+                        height: 40px;
+                        margin: 10px 20px;
+                        border-style: none;
+                        font-family: 'Lucida Sans Unicode';
+                    }
+                }
+            //*******executive-change-form.html********//
+
+            //     nccf kano units    
+                .units-container{
+                    nav{
+                        width: 80%;
+                        height: 60px;
+                        cursor: pointer;
+                        font-size: 24px;
+                        margin: 20px;
+                        box-shadow: 0 0 6px #000;
+                    }
+                    p{
+                        padding: 10px;
+                    }
+                    :hover{
+                        background-color: lightgray;
+                        color:#fff;
+                    }
+                }
+            // ******nccf kano units **************//
+
+            //      Edit profile
+                .profileEditContainer{
+                    width:40%;
+                    height: 320px;
+                    margin: 50px auto;
+                    box-shadow: 0 0 14px $hr-color;
+
+                    form{
+                        float: left;
+                        padding: 20px;
+                        width: auto;
+                        label{
+                            font-size: 16px;
+                            font-family: cursive;
+                        }
+                        input{
+                            width: 98%;
+                            height: 40px;
+                        }
+                    }
+
+                    nav{
+                        float: right;
+                        width: 28%;
+                        margin: 1%;
+                        img{
+                            width: 100%;
+                            height: 60%;
+                            margin: 0;
+                        }
+                    }
+                }
+
+            // *********edit profile ****************//
+
+            //         edit genco deligates.php
+
+                .editGencoContainer{
+                    #leftPan{
+                        width: 20%;
+                        height: auto;
+                        float: left;
+                        margin: 1%;
+                        ul{
+                            padding-left: 0;
+                            li{
+                                display: block;
+                                list-style: none;
+                                margin: 2px 0 10px 0;
+                                padding: 8px 0px 8px 0;
+                                margin-left: 0;
+                                cursor: pointer;
+                            }
+                            :hover{
+                                background-color: rgb(192, 192, 192);
+                                border-radius: 10px;
+                                color: #fff;
+                            }
+                        }
+                    }
+
+                    #ritePan{
+                        width: 74%;
+                        margin: 2%;
+                        height: auto;
+                        float: right;
+                        #displayPanel{
+                            height:  69vh;
+                            overflow: auto;
+                        }
+                    }
+                }
+
+
+            // ********edit genco deligates **********//
+
+           
+    }     
+    
+    
+}
+//******Index Page ***********//
+
+//      VIEW DELIGATES.php
+.deligatesTable{
+    
+    table{
+        cursor: pointer;
+        border-width: 4px;
+        border-spacing: 10px;
+        font-size: 16px;
+        font-family: cursive;
+   
+        tr{
+            background-color: rgb(240, 240, 240);
+            
+            td{
+                background-color: rgb(204, 204, 204);
+                border-radius: 0px;
+                border-bottom-right-radius: 0px;
+                box-shadow: 26px 0px 6px rgb(204, 204, 204);
+            }
+        }
+    }
+}
+// ********view deligates.php ************//
+
+//      enter new deligates .php        
+    .newDeligates{
+        margin: 4px 0 0 20px;
+        label{
+            font-family: cursive;
+        }
+        input,select{
+            width: 80%;
+            height: 40px;
+            margin-bottom: 10px;
+            border-style: none;
+            padding: 0 4px;
+        }
+        :focus{
+            box-shadow: 0 0 4px rgb(104, 104, 104);
+        }
+        .submitBtn{
+            width: 40%;
+            float: left;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 0 6px $hr-color;
+        }
+
+    }
+//*******enter new deligates.php***********//
+
+//    DELETE DELEGATE.PHP     
+    .deleteDeligateContainer{
+        fieldset{
+            height: 150px;
+            margin: 30px;
+            width: 70%;
+            border-radius: 10px;
+            p{
+                font-size: 16px;
+                color: gray;
+                text-align: justify;
+            }
+            input{
+                width: 74%;
+                height: 40px;
+                margin: 4px;
+                cursor: pointer;
+                margin: 0 auto;
+            }
+            input.btn{
+                width: 20%;
+            }
+        }
+    }
+//********delete delegate.php**************//
+
+//      SEARCH DELIGATE.PHP
+    .searchContainer{
+            form{
+                select{
+                    width: 70%;
+                    height: 40px;
+                }
+                input{
+                    width: 24%;
+                    height: 40px;
+                }
+            }
+    
+    }
+
+//********search deligate.php***************//
+//      Search deligate handler .php
+    .searchResultTable{
+        table{
+            border-spacing: 14px;
+            border-width: 6px;
+            font-size: 16px;
+
+            tr{
+                background-color: rgb(177, 177, 177);
+                td{
+                    box-shadow: 20px 0 4px rgb(177, 177, 177);
+                }
+            }
+        }
+    }
+//********Search deligate handler.php ********//
+
+@import "responsive";
+

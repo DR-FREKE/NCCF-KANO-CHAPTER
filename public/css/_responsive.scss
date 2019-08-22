@@ -1,0 +1,27 @@
+@media only screen and (max-width: 1350px) {
+    .grid{
+        display: none;
+    }
+    #desktop{
+        
+        h1{
+            font-family: 'Poppins', sans-serif;
+            padding-top: 200px;
+            font-weight: 500;
+            text-align: center;
+        }
+        p{
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+            padding-top:40px;
+            text-align: center;
+        }
+    }
+    
+}
+@media only screen and (min-width: 1350px) {
+    #desktop{
+        display: none;
+    }
+    
+}

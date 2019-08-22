@@ -1,0 +1,134 @@
+// variables
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
+// mixins
+@mixin buttons{
+    text-decoration: none;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: .85em;
+    background: white;
+    outline: none;
+    cursor: pointer;
+}
+@mixin gradient{
+    display: grid;
+    height: 100vh;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+@mixin form-section{
+    display: grid;
+    height: 100vh;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+@mixin gradient-area{
+    padding: 190px 50px;
+    text-align: center;
+    color: white;
+    h1{
+        font-size: 3em;
+    }
+    p{
+        padding-bottom: 30px;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    a{
+        @include buttons;
+        color: #212F3C;
+        padding: 1.2em 3em;
+    }
+}
+@mixin form-section-area{
+    padding: 0 50px;
+    text-align: center;
+    color:   #212f3c ;
+    img{
+        width: 50px;
+        margin-top: 0;
+    }
+    h1{
+        font-size: 2.2em;
+        font-weight: bold;
+    }       
+    p{
+        color: #48C9B0;
+    }
+    form{
+        width: 100%;
+        input, select{
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: none;
+            border: none;
+            border-bottom: solid 1px rgb(122, 224, 231);
+            outline: none;
+            font-size: .85em;
+            padding: .95em;
+        }
+        .btn{
+            padding-top: 30px;
+            button{
+                @include buttons;
+                border: 1px solid #212F3C;
+                background: #212F3C;
+                color: #48C9B0;
+                padding: 1.2em 6.2em;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}
+
+// main styling
+.grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.sect1{
+    @include gradient;
+    align-self: start;
+    grid-column: 1/6;
+    background:  #48C9B0;
+    .verify{
+        @include gradient-area;
+    }
+}
+.sect2{
+    @include form-section;
+    align-self: end;
+    grid-column: 6/13;
+    .register{
+        @include form-section-area;
+    }
+    
+}
+
+footer {
+    background-color:   #212F3C;
+    color: #fff;
+    font-size: 13px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+    font-family: 'Poppins', sans-serif;
+    p{
+        margin: 10px 0;
+    }
+    a{
+        color: #48C9B0;
+        text-decoration: none;
+    }
+    img{
+        width: 12px;
+        
+    }
+}
+@import "responsive";
